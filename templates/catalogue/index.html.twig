@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class = "bod">
+    <div class="text-center ck mx-auto mt-4">
+        <h1>Bienvenue sur le site The District</h1>
+    </div>
+
+    <section class="container-fluid">
+        <div class="ra"> 
+             {# <form action="#" method="GET"> 
+                {% if app.request.query.get('search') is defined and app.request.query.get('search') is not empty %}
+                {% set keyWord = app.request.query.get('search') %}
+                {% set plats = searchBar(keyWord, db) %}
+                {% redirect 'resultsearch.php' %}
+                {% endif %}  #}
+
+                <div class="search-bar d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="search-button btn btn-primary" type="submit" id="searchButton">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>  
+
+    <section class="text-center ck mx-auto">
+        <h1>Voici nos catégories de plats populaires</h1>
+        <div class="row d-flex justify-content-around mx-auto">
+
+            {% for element in categorie %}
+                <div class="row col-3 m-5">
+                    <div class="card" style="width: 25rem;">
+                        <img src="images_the_district/category/{{ element.image }}" class="img-fluid cover rounded-start" alt="{{ element.libelle }}">
+                        <div class="card-body">
+                            <h3 class="card-text text-center">{{ element.libelle }}</h3>
+                            <a href="{{ path('app_catalogue_platcat',{'categorie_id': element.id }) }}"  class="btn btn-primary">Selectionner</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="affpla" class="text-center cg mx-auto">
+        <h2>Voici les plats les plus vendus</h2>
+        <div class="d-flex justify-content-around mx-auto">
+            {% for plt in plat %}
+                <div class="row col-3 m-5">
+                    <div class="card" style="width: 25rem;">
+                        <img src="images_the_district/food/{{ plt.image }}" class="img-fluid cover rounded-start" alt="{{ plt.libelle }}">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">{{ plt.libelle }}</h3>
+                            <a href="{{ path('app_catalogue',{'id': plt.id }) }}"  class="btn btn-primary">Commander</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <a href="{{path('app_catalogue_categorie')}}"  class="btn btn-primary btn-lg zoom col-5 col-md-1 btns">Suivant</a>
+        </div>
+    </section>
+</div>
+{% endblock %}
