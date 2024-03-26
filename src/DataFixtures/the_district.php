@@ -48,8 +48,15 @@ $plat = array(
 ','id_categorie' => '10','active' => 'Yes'),
   array('id' => '17','libelle' => 'Tagliatelles au saumon','description' => 'Découvrez notre recette délicieuse de tagliatelles au saumon frais et à la crème qui qui vous assure un véritable régal!  
 
-','prix' => '12.00','image' => 'tagliatelles_saumon.webp
-','id_categorie' => '10','active' => 'Yes')
+','prix' => '12.00','image' => 'tagliatelles_saumon.jpg
+','id_categorie' => '10','active' => 'Yes'),
+  array('id' => '18','libelle' => 'Sandwich au jambon','description' => 'Le sandwich au jambon est apprécié pour sa facilité de préparation, sa portabilité et sa capacité à satisfaire rapidement la faim, ce qui en fait un choix populaire pour les déjeuners rapides, les pique-niques ou les repas sur le pouce.',
+  'prix' => '8.00','image' => 'sandwich_jambon.jpg','id_categorie' => '11','active' => 'Yes'),
+  array('id' => '19','libelle' => 'Sandwich sous marin','description' => 'Le sandwich sous marin est apprécié pour sa facilité de préparation, sa portabilité et sa capacité à satisfaire rapidement la faim, ce qui en fait un choix populaire pour les déjeuners rapides',
+  'prix' => '7.00','image' => 'sandwich_sous_marin.jpg','id_categorie' => '11','active' => 'Yes'),
+  array('id' => '20','libelle' => 'Sushi','description' => 'Les sushis sont des plats japonais emblématiques composés de riz vinaigré, souvent garnis de poisson cru ou d\'autres fruits de mer, d\'algues nori, et parfois d\'autres ingrédients tels que des légumes ou des œufs. Ils sont souvent servis avec du gingembre mariné, du wasabi et de la sauce soja pour accompagner et relever les saveurs',
+  'prix' => '10.00','image' => 'asian_food.jpg','id_categorie' => '12','active' => 'Yes')
+
 );
 
 /* `the_district`.`utilisateur` */

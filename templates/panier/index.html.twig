@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+<div class = "container mt-4">
+    <h1><Votre Panier!</h1>
+    {% if(plat | length >0) %}
+
+        <table class="table table-bordered border-primary">
+            <thead>
+                <tr>
+                <th scope="col">Libellé</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Prix total</th>
+                 <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for plt in plat %}
+                <tr>
+                <td>{{plt.plat.libelle}}</td>
+                <td>{{plt.quantite}}</td>
+                <td>{{plt.plat.prix}}€</td>
+                <td>{{plt.plat.prix * plt.quantite}}€</td>
+                <td>
+                    <a href = "#" class="btn btn-info" type = "button">Ajouter</a>
+                     <a href = "#" class="btn btn-danger" type = "button">Supprimer</a>
+                     <a href = "#" class="btn btn-danger" type = "button">Supprimer le produit</a>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <td colspan="3" class="table-active">TOTAL: </td>
+                <td>{{ total }}€</td>
+            </tfoot>
+        </table>
+        
+    {% else %}
+    <p>Le panier est vide</p>
+    {% endif %}
+{% endblock %}

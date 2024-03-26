@@ -30,10 +30,10 @@ class PlatRepository extends ServiceEntityRepository
      
 
         $qb
-        ->select('p.libelle', 'p.image', 'p.id', 'p.prix')
+        ->select ('p')
         ->from(Plat::class, 'p')
         ->join(Detail::class, 'd', 'WITH' , 'p.id = d.plat')
-        ->groupBy('p.libelle', 'p.image', 'p.id', 'p.prix')
+        ->groupBy('p')
         ->orderBy('SUM(d.quantite)', 'DESC')
         ->setMaxResults(3);
 

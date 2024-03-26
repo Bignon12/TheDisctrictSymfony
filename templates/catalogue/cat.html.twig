@@ -11,24 +11,25 @@
         </video>
     </div>
 </section>
-    <section>
-        <div class="text-center ck mx-auto mt-4">
-            <h1>Voici les catégories de plats que nous vous proposons!</h1>
-        </div>
+
+  <section class="text-center ck mx-auto mt-3">
+        <h1>Voici nos catégories de plats populaires</h1>
         <div class="row d-flex justify-content-around mx-auto">
+
             {% for element in categorie %}
-                    <div class="row col-3 m-5">
+                <div class="row col-3 m-5">
                     <div class="card" style="width: 25rem;">
                         <img src="images_the_district/category/{{ element.image }}" class="img-fluid cover rounded-start" alt="{{ element.libelle }}">
                         <div class="card-body">
                             <h3 class="card-text text-center">{{ element.libelle }}</h3>
-                            <a href="{{ path('app_catalogue',{'id': element.id }) }}"  class="btn btn-primary">Selectionner</a>
+                            <a href="{{ path('app_catalogue_platcat',{'categorie_id': element.id }) }}"  class="btn btn-primary">Selectionner</a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </section>
+
     <section>
         <div class="d-grid gap-2 d-md-flex justify-content-md-around">
             <a href="{{ path('app_catalogue') }}" class="btn btn-primary" type="button">Précédent</a>
