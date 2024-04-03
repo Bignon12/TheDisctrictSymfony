@@ -145,9 +145,8 @@ body {
     margin-bottom: 20px;
 }
 
-.foot{
+.foo{
     border: solid;
-    border-radius: 10%;
     margin-top: 20px;
     background-color: #970646 ;
 }
@@ -218,4 +217,4 @@ body {
 h1 {
     text-align: center;  
 }
- }
+ 
