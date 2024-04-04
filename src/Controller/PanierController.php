@@ -53,4 +53,14 @@ class PanierController extends AbstractController
          //redirection sur la page panier
         return $this->redirectToRoute('app_panier');
     }
+
+    #[Route('/panier/vider_panier', name: 'vider_panier')]
+    public function vider_panier(PanierService $panierService)
+    {
+        //je fais appel au PanierService auquel j'applique la méthode viderPanier
+        $panierService->vider_panier();
+
+         //redirection sur la page panier
+        return $this->redirectToRoute('app_panier');
+    }
 }

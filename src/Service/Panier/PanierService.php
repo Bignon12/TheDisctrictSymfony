@@ -115,4 +115,22 @@ class PanierService
 
         return $total;
     }
-}
+
+   
+    public function vider_panier()
+        {
+            // Récupérer la session à partir du service SessionInterface
+            $session = $this->requestStack->getSession();
+            
+            // Récupérer le panier de la session
+            $panier = $session->get('panier', []);
+        
+            // Vider le panier
+            $panier = [];
+        
+            // Sauvegarder le panier vidé dans la session
+            $session->set('panier', $panier);
+        }
+        
+    }
+
